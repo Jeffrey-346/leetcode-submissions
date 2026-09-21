@@ -1,0 +1,21 @@
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        # is this the same algorithm as the last question, but now we just 
+        # count? No need for max length
+        count = 0
+        for i in range(len(s)):
+            # odd
+            l,r = i, i
+            while l >= 0 and r < len(s) and s[l] == s[r]:
+                count += 1
+                l -= 1
+                r += 1
+            l, r = i, i + 1
+            while l >= 0 and r < len(s) and s[l] == s[r]:
+                count += 1
+                l -= 1
+                r += 1 
+        return count
+
+        
+        
